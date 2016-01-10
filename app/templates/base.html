@@ -1,0 +1,20 @@
+<html>
+	<head>
+    	{% if title %}
+    		<title>{{title}} - timetable</title>
+    	{% else %}
+    	<title>timetable</title>
+    	{% endif %}
+  	</head>
+	<body>
+		<div>
+			<ul>
+				<li> Timetable: <a href="/index">Home</a> </li>
+				 {% if current_user.is_authenticated %}
+					<li><a href="{{ url_for('logout') }}">Logout</a></li>
+				{% endif %}
+			</ul>
+		</div>
+		{%block content%} {%endblock%}
+	</body>
+</html>
